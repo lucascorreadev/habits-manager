@@ -1,5 +1,6 @@
 import DayState from "@/components/DayState";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const habits = {
@@ -44,13 +45,19 @@ export default function Home() {
                 <div  key={day} className="flex flex-col last:font-bold">
                 <span className="font-sans text-xs text-white text-center">{day}</span>
                 {/* day state*/ }
-                <DayState day={false}/>
+                <DayState day={undefined}/>
                 </div>
               ))}
             </section>
           </div>
         ))
       }
+
+      <Link href="novo-habito"
+      className="fixed text-center bottom-10 w-2/3 left-1/2 -translate-x-1/2
+      text-neutral-900 bg-[#45EDAD] font-display font-regular text-2xl p-2 rounded-md">
+      novo hábito
+      </Link>
     </main>
   )
 }
